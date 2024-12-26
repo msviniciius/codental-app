@@ -1,0 +1,14 @@
+<% unless controller_name == "registrations" %>
+  <%- value = "helpers.titles.#{action_name}" -%>
+
+  <h1>
+    <span class="color">
+      <%=t value %>
+    </span>
+    <% if action_name == "index" %>
+      de <%= Kernel.const_get(controller_name.singularize.camelize).model_name.human.downcase.pluralize %>
+    <% else %>
+      <%= Kernel.const_get(controller_name.singularize.camelize).model_name.human.downcase %>
+    <% end -%>
+  </h1>
+<% end -%>

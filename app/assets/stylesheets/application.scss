@@ -1,0 +1,169 @@
+@import "bootstrap";
+@import 'bootstrap-datetimepicker';
+@import "font-awesome";
+// @import "chosen";
+@import "chosen-bootstrap";
+@import "adminLTE/AdminLTE";
+@import "adminLTE/skins/skin-redtjpi.min";
+@import "summernote";
+
+.navbar-nav > .user-menu > .dropdown-menu > li.user-header > img {
+    border: none;
+}
+
+.linktjpi {
+    font-weight: bold;
+}
+
+.ttop-25 {
+  margin-top: 25px;
+}
+
+.linktjpi > img {
+    width: 35px;
+    margin-top: -8px;
+    margin-left: 4px;
+}
+
+.logotjfooter {
+    width: 25px;
+    margin-top: -6px;
+    margin-left: 4px;
+}
+
+.red {
+    color: #d9534f !important;
+}
+
+.yellow {
+    color: #f0ad4e !important;
+}
+
+.fundo-branco {
+    background: #fff;
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+
+.todo-list > li .text {
+  display: unset !important;
+  margin-left: 5px;
+  font-weight: 600;
+}
+.box-body {
+  .box-footer{
+    margin: 10px -10px -10px;
+    &.inside{
+      margin: 0px !important;
+    }
+  }
+  .box-header{
+      margin: -10px -10px 20px -10px;
+      &.cocoon{
+        margin: inherit !important;
+      }
+      &.inside{
+        margin: 0px !important;
+      }
+  }
+}
+
+.btn-saldo {
+  margin-top:25px;
+}
+
+.nav-tabs-custom > .nav-tabs > li.active {
+  border-top-color: #90040a !important
+}
+
+.dt-buttons {
+  position: relative;
+  float: left;
+}
+
+.dt-buttons.buttons-right {
+  float: right;
+}
+
+// .btn-group {
+//   padding-left: 1420px;
+// }
+
+.dt-button-collection {
+  position: absolute;
+  top: 0;
+  left: 0;
+  // width: 110px;
+  margin-top: -35px;
+  margin-left: 150px;
+  padding: 4px 4px 4px;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0,0,0,0.4);
+  background-color: white;
+  overflow: hidden;
+  z-index: 2002;
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px rgba(0,0,0,0.3);
+  -webkit-column-gap: 8px;
+  -moz-column-gap: 8px;
+  -ms-column-gap: 8px;
+  -o-column-gap: 8px;
+  column-gap: 8px;
+
+}
+
+.dt-button-collection a.dt-button,
+.dt-button-collection button.dt-button,
+.dt-button-collection .dt-button {
+  position: relative;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: block;
+  float: none;
+  margin-bottom: 4px;
+  margin-right: 0;
+}
+
+tr.dt-button-collection-title {
+  text-align: center;
+  padding: 0.3em 0 0.5em;
+  font-size: 0.9em;
+}
+
+tr.dt-button-collection-title:empty {
+  display: none;
+}
+
+.dt-buttons {
+    float: none !important;
+    text-align: center;
+}
+
+.remove {
+    margin-top: 25px;
+}
+
+.dt-button-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  background: -ms-radial-gradient(center, ellipse farthest-corner, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%);
+  background: -moz-radial-gradient(center, ellipse farthest-corner, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%);
+  background: -o-radial-gradient(center, ellipse farthest-corner, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%);
+  background: -webkit-gradient(radial, center center, 0, center center, 497, color-stop(0, rgba(0,0,0,0.3)), color-stop(1, rgba(0,0,0,0.7)));
+  background: -webkit-radial-gradient(center, ellipse farthest-corner, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%);
+  background: radial-gradient(ellipse farthest-corner at center, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%);
+  z-index: 20;
+}
+
+.invalid-feedback {
+  color: red;
+}
+
+input[type=checkbox]  {
+  margin-right: 5px;
+}

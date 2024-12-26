@@ -1,0 +1,25 @@
+<aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      <!-- sidebar menu: : style can be found in sidebar.less -->
+      <ul class="sidebar-menu" data-widget="tree">
+        <li class="header">MENU PRINCIPAL</li>
+          <li class="treeview">
+            <a href="#">
+              <i class="fa fa-list"></i><span>PESSOA</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <% if user_signed_in? %>
+                <li> <%= link_to ClientFile.model_name.human.pluralize, client_files_path %></li>
+             <% end %>
+             <li>	<%= link_to Client.model_name.human.pluralize, clients_path %></li>
+            </ul>
+          </li>
+
+      </ul>
+    </section>
+    <!-- /.sidebar -->
+</aside>

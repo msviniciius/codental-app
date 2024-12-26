@@ -1,0 +1,4 @@
+Modelo,Marca,Fabricante,Tipo de Chip,Versão S.O.,Display,Tam. Tela,Resolução,Câmera Principal,Câmera Frontal,Memória RAM,Processador,Memória Interna,Cor,Modalidade,Quantidade,Preço
+Modelo1,Marca1,Fabricante1,Chip1,Versão 1.0,Display1,5.5,1920x1080,12MP,5MP,4GB,Processador1,64GB,Preto,Modalidade1,10,1000
+Modelo2,Marca2,Fabricante2,Chip2,Versão 2.0,Display2,6.0,2560x1440,16MP,8MP,6GB,Processador2,128GB,Branco,Modalidade2,15,1500
+Modelo3,Marca3,Fabricante3,Chip3,Versão 3.0,Display3,6.5,3840x2160,20MP,10MP,8GB,Processador3,256GB,Azul,Modalidade3,20,2000

@@ -1,0 +1,28 @@
+# encoding: UTF-8
+pt-BR:
+  activerecord:
+    models: &MODELS
+      client: Pessoa
+      client_file: Importar de Pessoas
+    attributes:
+      name_and_description: &BASIC
+        <<: *MODELS
+        name: Nome
+        description: Descrição
+        created_at: Criação
+        updated_at: Atualização
+      phone_file: &CLIENTFILES
+        <<: *BASIC
+        file: Arquivo CSV
+      client: &CLIENT
+        <<: *BASIC
+        name: Nome
+        address: Endereço
+        city: Cidade
+        state: Estado
+        zip_code: CEP
+        phone: Telefone
+        cpf: CPF
+
+        <<: *CLIENT
+        <<: *CLIENTFILES
