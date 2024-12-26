@@ -1,0 +1,43 @@
+<%= simple_form_for(@client) do |f| %>
+  <div class="card card-outline card-danger">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <%= f.input :name, label: 'Nome', required: true, input_html: { class: 'form-control' } %>
+        </div>
+        <div class="col-md-6 mb-3">
+          <%= f.input :cpf, label: 'CPF', required: true, input_html: { class: 'form-control cpf-mask' } %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <%= f.input :address, label: 'Endereço', required: true, input_html: { class: 'form-control' } %>
+        </div>
+        <div class="col-md-3 mb-3">
+          <%= f.input :city, label: 'Cidade', required: true, input_html: { class: 'form-control' } %>
+        </div>
+        <div class="col-md-3 mb-3">
+          <%= f.input :state, label: 'Estado', required: true, input_html: { class: 'form-control' } %>
+        </div>
+        <div class="col-md-2 mb-3">
+          <%= f.input :zip_code, label: 'CEP', required: true, input_html: { class: 'form-control cep-mask' } %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <%= f.input :phone, label: 'Telefone', required: false, input_html: { class: 'form-control' } %>
+        </div>
+
+        <div class="col-md-4 mb-3">
+        <%= f.input :client_file_id, collection: ClientFile.all.collect { |file| [file.file, file.id] }, label: "Selecionar Arquivo", include_blank: "Nenhum" %>
+      </div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <%= link_to 'Cancelar', clients_path, class: "btn btn-default" %>
+      <%= f.button :submit, 'Salvar', class: 'btn btn-primary' %>
+    </div>
+  </div>
+<% end %>

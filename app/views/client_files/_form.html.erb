@@ -2,14 +2,16 @@
   <div class="form-group">
     <%= simple_form_for @client_file, multipart: true do |f| %>
       <div class='row'>
-        <%= f.input :file, as: :file, label: (@client_file.file? ? 'Arquivo já selecionado' : 'Arquivo'), wrapper_html: {class: "col-sm-3"} %>
         <%= f.input :month, as: :select, collection: (2020..Date.today.year + 1).to_a.collect {|d| [d, d]}, placeholder: 'Ano', wrapper_html: {class: "col-sm-2"} %>
         <%= f.input :year, placeholder: 'Mês', wrapper_html: {class: "col-sm-3"} %>
         <%= f.input :file_cache, as: :hidden %>
       </div><p>
+      <div class='col-md-6 mb-3'>
+        <%= f.input :file, as: :file, label: (@client_file.file? ? 'Arquivo já selecionado' : 'Arquivo'), wrapper_html: {class: "col-sm-3"} %>
+      </div><p>
 
   <% if @client_file.clients.any? %>
-    <h3>Pessoas importadas</h3>
+    <h5>Pessoas importadas</h3>
       <div class="table-responsive">
         <table class="table table-bordered table-hover">
           <thead>
@@ -50,7 +52,7 @@
 
   <div class="form-group">
     <%= link_to 'Cancelar', client_files_path, class: "btn btn-default" %>
-    <%= f.submit (@client_file.clients.any? ? 'Salvar' : 'Importar Arquivo'), class: "float-left btn btn-danger" %>
+    <%= f.submit (@client_file.clients.any? ? 'Salvar' : 'Importar Arquivo'), class: "float-left btn btn-primary" %>
   </div>
 </div>
 <% end %>

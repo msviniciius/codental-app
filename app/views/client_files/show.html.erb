@@ -1,7 +1,7 @@
 <div class="card card-outline card-danger">
 
   <div class="card-header with-border">
-    <h3 class="card-title">
+    <h5 class="card-title">
       <strong>
         Visualizar Importação Pessoas
       </strong>
@@ -35,27 +35,30 @@
           </tr>
           <tr>
             <th style="width: 10px">#</th>
-            <th class="text-center align-middle">Nome</th>
-            <th class="text-center align-middle"">Endereço</th>
-            <th class="text-center align-middle"">Cidade</th>
-            <th class="text-center align-middle"">Estado</th>
-            <th class="text-center align-middle"">CEP</th>
-            <th class="text-center align-middle"">Telefone</th>
-            <th class="text-center align-middle"">CPF</th>
+            <th>Nome</th>
+            <th>Endereço</th>
+            <th>Cidade</th>
+            <th>Estado</th>
+            <th>CEP</th>
+            <th>Telefone</th>
+            <th>CPF</th>
+            <th class="text-center align-middle"">Acões</th>
           </tr>
           </thead>
           <tbody>
           <% @client_files.clients.each do |ph| %>
             <tr>
-              <td class="text-center align-middle"><%= ph.id %></td>
-              <td class="text-center align-middle"><%= ph.name %></td>
-              <td class="text-center align-middle"><%= ph.address %></td>
-              <td class="text-center align-middle"><%= ph.city %></td>
-              <td class="text-center align-middle"><%= ph.state %></td>
-              <td class="text-center align-middle"><%= ph.zip_code %></td>
-              <td class="text-center align-middle"><%= ph.phone %></td>
-              <td class="text-center align-middle"><%= ph.cpf %></td>
-              <td class='text-center align-middle'></td>
+              <td><%= ph.id %></td>
+              <td><%= ph.name %></td>
+              <td><%= ph.address %></td>
+              <td><%= ph.city %></td>
+              <td><%= ph.state %></td>
+              <td><%= ph.zip_code %></td>
+              <td><%= ph.phone %></td>
+              <td><%= ph.cpf %></td>
+              <td class='text-center'>
+                <%= render 'shared/action_links', object: ph %>
+              </td>
             </tr>
           <% end %>
           </tbody>

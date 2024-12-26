@@ -1,0 +1,59 @@
+<div class="card card-outline card-danger">
+
+  <div class="card-header with-border">
+    <h5 class="card-title">
+      <strong>
+        Visualizar Cliente
+      </strong>
+    </h3>
+  </div>
+
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table table-striped table-bordered">
+          <tbody>
+            <tr>
+              <td><strong>Nome:</strong></td>
+              <td><%= @client&.name %></td>
+            </tr>
+            <tr>
+              <td><strong>CPF:</strong></td>
+              <td><%= @client&.cpf %></td>
+            </tr>
+            <tr>
+              <td><strong>Telefone:</strong></td>
+              <td><%= @client&.phone %></td>
+            </tr>
+            <tr>
+              <td><strong>Endereço:</strong></td>
+              <td><%= @client&.address %></td>
+            </tr>
+            <tr>
+              <td><strong>Cidade:</strong></td>
+              <td><%= @client&.city %></td>
+            </tr>
+            <tr>
+              <td><strong>Estado:</strong></td>
+              <td><%= @client&.state %></td>
+            </tr>
+            <tr>
+              <td><strong>CEP:</strong></td>
+              <td><%= @client&.zip_code %></td>
+            </tr>
+            <tr>
+              <td><strong>Arquivo Associado:</strong></td>
+              <td><%= @client.client_file&.file %></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="card-footer">
+    <%= link_to 'Voltar', clients_path, class: "btn btn-default" %>
+    <%= link_to 'Editar', edit_client_path(@client), class: "btn btn-primary" %>
+  </div>
+</div>

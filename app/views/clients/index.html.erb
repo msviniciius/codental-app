@@ -18,7 +18,7 @@
         </div>
         <p>
         <div class="col-12"></div>
-        <%= f.submit "Pesquisar", class: 'btn btn-danger' %>
+        <%= f.submit "Pesquisar", class: 'btn btn-primary' %>
       <% end %>
     </div>
   </div>
@@ -27,7 +27,7 @@
 <div  class="box-body">
   <div class="card card-outline card-danger">
     <div class="card-header with-border">
-      <h3 class="card-title">
+      <h5 class="card-title">
         <strong>
           <i class="fa fa-list"></i>
           Pessoas
@@ -35,37 +35,44 @@
       </h3>
     </div>
 
-      <div class="card-body">
-        <div class="row">
-          <div class="col-md-12">
-            <table class="table table-striped bootstrap-table-paginated">
-              <thead>
-                <tr>
-                  <th class='text-left'>Nome</th>
-                  <th class='text-left'>Endereço</th>
-                  <th class='text-left'>Cidade</th>
-                  <th class='text-left'>Estado</th>
-                  <th class='text-left'>CEP</th>
-                  <th class='text-left'>Telefone</th>
-                  <th class='text-left'>CPF</th>
-                </tr>
-              </thead>
-            <tbody>
-              <% @clients.each do |client| %>
-                <tr>
-                  <td><%= client.name %></td>
-                  <td><%= client.address %></td>
-                  <td><%= client.city %></td>
-                  <td><%= client.state %></td>
-                  <td><%= client.zip_code %></td>
-                  <td><%= client.phone %></td>
-                  <td><%= client.cpf %></td>
-                </tr>
-              <% end %>
-            </tbody>
-          </table>
-        </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-12">
+          <table class="table table-striped bootstrap-table-paginated">
+            <thead>
+              <tr>
+                <th class='text-left'>Nome</th>
+                <th class='text-left'>Endereço</th>
+                <th class='text-left'>Cidade</th>
+                <th class='text-left'>Estado</th>
+                <th class='text-left'>CEP</th>
+                <th class='text-left'>Telefone</th>
+                <th class='text-left'>CPF</th>
+                <th class='text-left'>Acões</th>
+              </tr>
+            </thead>
+          <tbody>
+            <% @clients.each do |client| %>
+              <tr>
+                <td><%= client.name %></td>
+                <td><%= client.address %></td>
+                <td><%= client.city %></td>
+                <td><%= client.state %></td>
+                <td><%= client.zip_code %></td>
+                <td><%= client.phone %></td>
+                <td><%= client.cpf %></td>
+                <td class='text-center'>
+                  <%= render 'shared/action_links', object: client %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
       </div>
+    </div>
+
+    <div class="card-footer">
+      <%= link_to 'Cadastrar', new_client_path, class: "btn btn-primary" %>
     </div>
   </div>
 </div>

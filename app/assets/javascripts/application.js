@@ -10,14 +10,14 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require jquery2
 //= require jquery
+//= require jquery.mask
 //= require jquery-ui
 //= require jquery_ujs
-//= require jquery.mask
 //= require chosen-jquery
 //= require cocoon
 //= require client_files
+//= require toastr
 //= require bootstrap-multiselect
 //= require bootstrap-sprockets
 //= require bootstrap3-typeahead
@@ -54,4 +54,13 @@ document.addEventListener('turbolinks:load', function () {
     console.log('Novo campo adicionado:', insertedItem);
     // Ajuste estilos ou ações para o novo campo aqui
   });
+});
+
+$(document).ready(function() {
+  console.log('Aplicando máscara de CPF e CEP');
+  // Máscara para CPF (###.###.###-##)
+  $('.cpf-mask').mask('000.000.000-00', {reverse: true});
+
+  // Máscara para CEP (#####-###)
+  $('.cep-mask').mask('00000-000');
 });

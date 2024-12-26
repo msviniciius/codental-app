@@ -14,7 +14,7 @@
         </div>
         <p>
         <div class="col-12"></div>
-        <%= f.submit "Pesquisar", class: 'btn btn-danger' %>
+        <%= f.submit "Pesquisar", class: 'btn btn-primary' %>
       <% end %>
     </div>
   </div>
@@ -23,51 +23,50 @@
 <div  class="box-body">
   <div class="card card-outline card-danger">
     <div class="card-header with-border">
-      <h3 class="card-title">
+      <h5 class="card-title">
         <strong>
-          <i class="fa fa-list"></i>
-          Listagem
+          <i class="fa fa-users"></i>
+          Listagem de clientes importados
         </strong>
       </h3>
     </div>
 
-      <div class="card-body">
-        <div class="row">
-          <div class="col-md-12">
-            <table class="table table-striped bootstrap-table-paginated">
-              <thead>
-                <tr>
-                  <th class='text-center'>Ano</th>
-                  <th class='text-center'>Mês</th>
-                  <th class='text-center'>Arquivo</th>
-                  <th class='text-center'>Criação</th>
-                  <th class='text-center' data-width="100px">Ações</th>
-                </tr>
-              </thead>
-            <tbody>
-              <% @client_files.each do |client| %>
-                <tr>
-                  <td class='text-center'><%= client.year %></td>
-                  <td class='text-center'><%= client.month %></td>
-                  <td class='text-center'>
-                    <%= link_to client.file.url, class: 'd-inline-block text-truncate', style: "max-width: 300px;" do %>
-                      <%= client.file %>
-                    <% end %>
-                  </td>
-                  <td class='text-center'><%= format_datetime(client.created_at) %></td>
-                  <td class='text-center'>
-                    <%= render 'shared/action_links', object: client %>
-                  </td>
-                </tr>
-              <% end %>
-            </tbody>
-          </table>
-        </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-12">
+          <table class="table table-striped bootstrap-table-paginated">
+            <thead>
+              <tr>
+                <th>Ano</th>
+                <th>Mês</th>
+                <th>Arquivo</th>
+                <th>Criação</th>
+                <th class='text-center' data-width="100px">Ações</th>
+              </tr>
+            </thead>
+          <tbody>
+            <% @client_files.each do |client| %>
+              <tr>
+                <td><%= client.year %></td>
+                <td><%= client.month %></td>
+                <td>
+                  <%= link_to client.file.url, class: 'd-inline-block text-truncate', style: "max-width: 300px;" do %>
+                    <%= client.file %>
+                  <% end %>
+                </td>
+                <td><%= format_datetime(client.created_at) %></td>
+                <td class='text-center'>
+                  <%= render 'shared/action_links', object: client %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
       </div>
     </div>
 
     <div class="card-footer">
-      <%= link_to 'Importar', new_client_file_path, class: "btn btn-danger" %>
+      <%= link_to 'Importar', new_client_file_path, class: "btn btn-primary mr-2" %>
     </div>
   </div>
 </div>

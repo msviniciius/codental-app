@@ -22,20 +22,21 @@ class ClientFilesController < ApplicationController
     @client_file = ClientFile.new(client_file_params)
     respond_to do |format|
       if @client_file.clients.any?
-        cpf_duplicado = Client.where(cpf: @client_file.clients.map(&:cpf)).pluck(:cpf)
-        if cpf_duplicado.any?
-          format.html { render :new, alert: "Importação falhou. Os seguintes CPFs já existem: #{cpf_duplicado.join(', ')}." }
-          format.json { render json: { error: "CPFs já existentes: #{cpf_duplicado.join(', ')}" }, status: :unprocessable_entity }
-        elsif @client_file.valid? && @client_file.save
-          format.html { redirect_to @client_file, notice: 'Importação criada com sucesso.' }
-          format.json { render :show, status: :created, location: @client_file }
-        else
+        existing_cpfs = Client.where(cpf: @client_file.clients.map(&:cpf)).pluck(:cpf)
+        if existing_cpfs.any?
+          flash.now[:alert] = "Importação falhou. CPFs duplicados encontrados."
           format.html { render :new, status: :unprocessable_entity }
-          format.json { render json: @client_file.errors, status: :unprocessable_entity }
+        elsif @client_file.valid? && @client_file.save
+          flash[:notice] = 'Importação criada com sucesso.'
+          format.html { redirect_to @client_file }
+        else
+          flash.now[:alert] = 'Erro ao salvar a importação. Verifique os dados.'
+          format.html { render :new, status: :unprocessable_entity }
         end
       else
         @client_file.build_from_csv
-        format.html { render :new, notice: 'Nenhum dado encontrado no CSV.' }
+        flash.now[:alert] = 'Nenhum dado encontrado no CSV.'
+        format.html { render :new }
       end
     end
   end
