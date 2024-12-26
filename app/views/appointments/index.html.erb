@@ -8,12 +8,12 @@
             <%= f.input :name_cont, required: false, label: false %>
           </div>
           <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
-            <label>CPF</label>
-            <%= f.input :cpf_cont, required: false, label: false %>
+            <label>Data de início</label>
+            <%= f.input :start_time_cont, required: false, label: false %>
           </div>
           <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
-            <label>Cidade</label>
-            <%= f.input :city_cont, required: false, label: false %>
+            <label>Data de fim</label>
+            <%= f.input :end_time_cont, required: false, label: false %>
           </div>
         </div>
         <p>
@@ -42,32 +42,20 @@
             <thead>
               <tr>
                 <th class='text-left'>Nome</th>
-                <th class='text-left'>Endereço</th>
-                <th class='text-left'>Cidade</th>
-                <th class='text-left'>Estado</th>
-                <th class='text-left'>CEP</th>
-                <th class='text-left'>Telefone</th>
-                <th class='text-left'>CPF</th>
-                <% if user_signed_in? %>
-                  <th class='text-left'>Acões</th>
-                <% end %>
+                <th class='text-left'>Data de início</th>
+                <th class='text-left'>Data de fim</th>
+                <th class='text-left'>Acões</th>
               </tr>
             </thead>
           <tbody>
-            <% @clients.each do |client| %>
+            <% @appointments.each do |appointment| %>
               <tr>
-                <td><%= client.name %></td>
-                <td><%= client.address %></td>
-                <td><%= client.city %></td>
-                <td><%= client.state %></td>
-                <td><%= client.zip_code %></td>
-                <td><%= client.phone %></td>
-                <td><%= client.cpf %></td>
-                <% if user_signed_in? %>
-                  <td class='text-center'>
-                    <%= render 'shared/action_links', object: client %>
-                  </td>
-                <% end %>
+                <td><%= appointment.name %></td>
+                <td><%= appointment.start_time %></td>
+                <td><%= appointment.end_time %></td>
+                <td class='text-center'>
+                  <%= render 'shared/action_links', object: appointment %>
+                </td>
               </tr>
             <% end %>
           </tbody>
@@ -76,9 +64,7 @@
     </div>
 
     <div class="card-footer">
-      <% if user_signed_in? %>
-        <%= link_to 'Cadastrar', new_client_path, class: "btn btn-primary" %>
-      <% end %>
+      <%= link_to 'Cadastrar', new_appointment_path, class: "btn btn-primary" %>
     </div>
   </div>
 </div>

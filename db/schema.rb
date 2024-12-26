@@ -10,9 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_12_24_040752) do
+ActiveRecord::Schema[8.0].define(version: 2024_12_26_171807) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension "pg_catalog.plpgsql"
+
+  create_table "appointments", force: :cascade do |t|
+    t.string "name"
+    t.date "start_time"
+    t.date "end_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "client_files", force: :cascade do |t|
     t.string "month"
@@ -33,6 +41,8 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_24_040752) do
     t.bigint "client_file_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "appointment_id"
+    t.index ["appointment_id"], name: "index_clients_on_appointment_id"
     t.index ["client_file_id"], name: "index_clients_on_client_file_id"
   end
 
@@ -48,5 +58,6 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_24_040752) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "clients", "appointments"
   add_foreign_key "clients", "client_files"
 end

@@ -1,5 +1,6 @@
 class Client < ApplicationRecord
   belongs_to :client_file, optional: true
+  belongs_to :appointment, dependent: :destroy
 
   validates :name, :cpf, :phone, :address, :city, :state, :zip_code, presence: true
   validates :cpf, presence: true, uniqueness: true

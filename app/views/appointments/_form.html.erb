@@ -1,0 +1,25 @@
+<%= simple_form_for(@appointment) do |f| %>
+  <div class="card card-outline card-danger">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <%= f.input :name, label: 'Nome', required: true, input_html: { class: 'form-control' } %>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+          <label for="appointment_start_time">Data de Início</label>
+          <%= f.text_field :start_time, required: true, 
+                          class: 'form-control datepicker', autocomplete: 'off' %>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+          <label for="appointment_end_time">Data de Fim</label>
+          <%= f.text_field :end_time, required: true, 
+                          class: 'form-control datepicker', autocomplete: 'off' %>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <%= link_to 'Cancelar', appointments_path, class: "btn btn-default" %>
+      <%= f.button :submit, 'Salvar', class: 'btn btn-primary' %>
+    </div>
+  </div>
+<% end %>

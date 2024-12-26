@@ -11,6 +11,9 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+//= require bootstrap-datepicker
+//= require bootstrap-datepicker/core
+//= require bootstrap-datepicker/locales/bootstrap-datepicker.pt-BR
 //= require jquery.mask
 //= require jquery-ui
 //= require jquery_ujs
@@ -27,8 +30,6 @@
 //= require datatables/dataTables.bootstrap
 //= require datatables/dataTables.responsive
 
-//= require bootstrap-datepicker/core
-//= require bootstrap-datepicker/locales/bootstrap-datepicker.pt-BR
 //= require moment
 //= require moment/pt-br
 //= require bootstrap-datetimepicker
@@ -57,10 +58,17 @@ document.addEventListener('turbolinks:load', function () {
 });
 
 $(document).ready(function() {
-  console.log('Aplicando máscara de CPF e CEP');
   // Máscara para CPF (###.###.###-##)
   $('.cpf-mask').mask('000.000.000-00', {reverse: true});
 
   // Máscara para CEP (#####-###)
   $('.cep-mask').mask('00000-000');
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  $('.datepicker').datepicker({
+    format: 'dd/mm/yyyy',
+    autoclose: true,
+    language: 'pt-BR'
+  });
 });

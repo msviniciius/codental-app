@@ -23,5 +23,9 @@ module ApplicationHelper
 
   def format_datetime(datetime)
     datetime.strftime("%d/%m/%Y %H:%M") if datetime.present?
+  end  
+  
+  def format_date(datetime)
+    datetime.strftime("%d/%m/%Y") if datetime.present?
   end
 end

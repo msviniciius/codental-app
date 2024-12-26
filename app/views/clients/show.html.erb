@@ -42,9 +42,13 @@
               <td><%= @client&.zip_code %></td>
             </tr>
             <tr>
+              <td><strong>Compromisso:</strong></td>
+              <td><%= @client.appointment&.name %></td>
+            </tr>
+            <tr>
               <td><strong>Arquivo Associado:</strong></td>
               <td><%= @client.client_file&.file %></td>
-            </tr>
+            </tr>            
           </tbody>
         </table>
       </div>

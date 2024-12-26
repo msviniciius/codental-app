@@ -30,9 +30,12 @@
           <%= f.input :phone, label: 'Telefone', required: false, input_html: { class: 'form-control' } %>
         </div>
 
-        <div class="col-md-4 mb-3">
-        <%= f.input :client_file_id, collection: ClientFile.all.collect { |file| [file.file, file.id] }, label: "Selecionar Arquivo", include_blank: "Nenhum" %>
-      </div>
+        <div class="col-md-3 mb-3">
+          <%= f.input :client_file_id, collection: ClientFile.all.collect { |file| [file.file, file.id] }, label: "Selecionar Arquivo", include_blank: "Nenhum" %>
+        </div>
+        <div class="col-md-3 mb-3">
+          <%= f.input :appointment_id, collection: Appointment.all.collect { |ap| [ap.name, ap.id] }, label: "Selecione um compromisso", include_blank: "Nenhum" %>
+        </div>
       </div>
     </div>
     <div class="card-footer">

@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root 'clients#index'
   resources :clients, only: [:show, :new, :create, :edit, :update, :index]
   resources :client_files
+  resources :appointments
 end

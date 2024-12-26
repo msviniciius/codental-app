@@ -2,6 +2,18 @@
 # yarn lockfile v1
 
 
+"@popperjs/core@^2.11.8":
+  version "2.11.8"
+  resolved "https://registry.npmjs.org/@popperjs/core/-/core-2.11.8.tgz"
+  integrity sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==
+
+bootstrap-datepicker@^1.10.0:
+  version "1.10.0"
+  resolved "https://registry.npmjs.org/bootstrap-datepicker/-/bootstrap-datepicker-1.10.0.tgz"
+  integrity sha512-lWxtSYddAQOpbAO8UhYhHLcK6425eWoSjb5JDvZU3ePHEPF6A3eUr51WKaFy4PccU19JRxUG6wEU3KdhtKfvpg==
+  dependencies:
+    jquery ">=3.4.0 <4.0.0"
+
 bootstrap@^5.3.3:
   version "5.3.3"
   resolved "https://registry.npmjs.org/bootstrap/-/bootstrap-5.3.3.tgz"
@@ -9,19 +21,19 @@ bootstrap@^5.3.3:
 
 jquery-mask-plugin@^1.14.16:
   version "1.14.16"
-  resolved "https://registry.yarnpkg.com/jquery-mask-plugin/-/jquery-mask-plugin-1.14.16.tgz#9ebb55947d984da5aade45315b2fe6b113e28aae"
+  resolved "https://registry.npmjs.org/jquery-mask-plugin/-/jquery-mask-plugin-1.14.16.tgz"
   integrity sha512-reywdHlYEkPbzWjTpcc1fk9XQ3PLvO5dzEAVqy8zI7NTF22tB1HbeU3iboZTLdkBEPaWAqeI2HtEjsGQ4roZKw==
 
 jquery-ui@^1.14.1:
   version "1.14.1"
-  resolved "https://registry.yarnpkg.com/jquery-ui/-/jquery-ui-1.14.1.tgz#ba342ea3ffff662b787595391f607d923313e040"
+  resolved "https://registry.npmjs.org/jquery-ui/-/jquery-ui-1.14.1.tgz"
   integrity sha512-DhzsYH8VeIvOaxwi+B/2BCsFFT5EGjShdzOcm5DssWjtcpGWIMsn66rJciDA6jBruzNiLf1q0KvwMoX1uGNvnQ==
   dependencies:
     jquery ">=1.12.0 <5.0.0"
 
-jquery@>=1.12.0, "jquery@>=1.12.0 <5.0.0", jquery@^3.7.1:
+jquery@^3.7.1, jquery@>=1.12.0, "jquery@>=1.12.0 <5.0.0", "jquery@>=3.4.0 <4.0.0":
   version "3.7.1"
-  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.7.1.tgz#083ef98927c9a6a74d05a6af02806566d16274de"
+  resolved "https://registry.npmjs.org/jquery/-/jquery-3.7.1.tgz"
   integrity sha512-m4avr8yL8kmFN8psrbFFFmB/If14iN5o9nw/NgnnM+kybDJpRsAynV2BsfpTYrTRysYUdADVD7CkUUizgkpLfg==
 
 popper.js@^1.16.1:
@@ -31,7 +43,7 @@ popper.js@^1.16.1:
 
 toastr@^2.1.4:
   version "2.1.4"
-  resolved "https://registry.yarnpkg.com/toastr/-/toastr-2.1.4.tgz#8b43be64fb9d0c414871446f2db8e8ca4e95f181"
+  resolved "https://registry.npmjs.org/toastr/-/toastr-2.1.4.tgz"
   integrity sha512-LIy77F5n+sz4tefMmFOntcJ6HL0Fv3k1TDnNmFZ0bU/GcvIIfy6eG2v7zQmMiYgaalAiUv75ttFrPn5s0gyqlA==
   dependencies:
     jquery ">=1.12.0"
