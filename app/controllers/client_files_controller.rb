@@ -4,7 +4,7 @@ class ClientFilesController < ApplicationController
 
   def index
     @q = ClientFile.ransack(params[:q])
-    @client_files = @q.result
+    @client_files = @q.result.order('name ASC')
   end
 
   def show
