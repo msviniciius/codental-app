@@ -1,0 +1,9 @@
+development:
+  adapter: redis
+  url: redis://localhost:6379/1
+  channel_prefix: codental_app_development
+
+production:
+  adapter: redis
+  url: redis://localhost:6379/1
+  channel_prefix: codental_app_production

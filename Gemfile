@@ -26,6 +26,8 @@ gem 'rails-i18n', '~> 8.0.0'
 gem 'devise'
 gem 'bootsnap', '~> 1.1', '>= 1.1.7'
 gem 'paperclip', '~> 6.1'
+gem 'sidekiq'
+gem 'redis'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -69,3 +71,4 @@ gem 'summernote-rails'
 gem 'jquery_mask_rails', '~> 0.1.0'
 gem 'toastr-rails'
 gem 'cpf_cnpj'
+gem "importmap-rails", "~> 2.1"

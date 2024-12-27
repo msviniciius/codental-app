@@ -34,10 +34,11 @@
 //= require moment/pt-br
 //= require bootstrap-datetimepicker
 
+//= require actioncable
 //= require summernote
 //= require summernote/lang/summernote-pt-BR
 
-//= require_tree .
+//= require_tree ./channels
 
 function display_fields(link) {
   if ($(link).hasClass("fa-plus")) {

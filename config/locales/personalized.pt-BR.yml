@@ -13,6 +13,8 @@ pt-BR:
         updated_at: Atualização
       phone_file: &CLIENTFILES
         <<: *BASIC
+        month: Mês
+        year: Ano
         file: Arquivo CSV
       client: &CLIENT
         <<: *BASIC

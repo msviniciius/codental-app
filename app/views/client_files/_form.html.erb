@@ -2,7 +2,7 @@
   <div class="form-group">
     <%= simple_form_for @client_file, multipart: true do |f| %>
       <div class='row'>
-        <%= f.input :month, as: :select, collection: (2020..Date.today.year + 1).to_a.collect {|d| [d, d]}, placeholder: 'Ano', wrapper_html: {class: "col-sm-2"} %>
+        <%= f.input :month, as: :select, collection: (2020..Date.today.year).to_a.collect {|d| [d, d]}, placeholder: 'Ano', wrapper_html: {class: "col-sm-2"} %>
         <%= f.input :year, placeholder: 'Mês', wrapper_html: {class: "col-sm-3"} %>
         <%= f.input :file_cache, as: :hidden %>
       </div><p>

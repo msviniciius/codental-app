@@ -4,6 +4,8 @@ class ClientsController < ApplicationController
   def index
     @q = Client.ransack(params[:q])
     @clients = @q.result.order('name ASC')
+
+    ClientStatisticsJob.perform_async
   end
 
   def show
