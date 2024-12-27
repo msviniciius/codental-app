@@ -20,24 +20,31 @@ class ClientFilesController < ApplicationController
 
   def create
     @client_file = ClientFile.new(client_file_params)
-    respond_to do |format|
-      if @client_file.clients.any?
-        existing_cpfs = Client.where(cpf: @client_file.clients.map(&:cpf)).pluck(:cpf)
-        if existing_cpfs.any?
-          flash.now[:alert] = "Importação falhou. CPFs duplicados encontrados."
-          format.html { render :new, status: :unprocessable_entity }
-        elsif @client_file.valid? && @client_file.save
-          flash[:notice] = 'Importação criada com sucesso.'
-          format.html { redirect_to @client_file }
+  
+    if @client_file.file.attached?
+      if @client_file.save && @client_file.build_from_csv
+        if @client_file.clients.any?
+          existing_cpfs = Client.where(cpf: @client_file.clients.map(&:cpf)).pluck(:cpf)
+  
+          if existing_cpfs.any?
+            flash.now[:alert] = "CPFs duplicados encontrados."
+            render :new, status: :unprocessable_entity
+          else
+            @client_file.clients.each(&:save)
+            flash[:notice] = 'Importação criada com sucesso.'
+            redirect_to @client_file
+          end
         else
-          flash.now[:alert] = 'Erro ao salvar a importação. Verifique os dados.'
-          format.html { render :new, status: :unprocessable_entity }
+          flash.now[:alert] = 'Nenhum dado encontrado no CSV.'
+          render :new, status: :unprocessable_entity
         end
       else
-        @client_file.build_from_csv
-        flash.now[:alert] = 'Nenhum dado encontrado no CSV.'
-        format.html { render :new }
+        flash.now[:alert] = 'Erro ao salvar o arquivo ou processar os dados.'
+        render :new, status: :unprocessable_entity
       end
+    else
+      flash.now[:alert] = 'Nenhum arquivo foi anexado.'
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -68,7 +75,7 @@ class ClientFilesController < ApplicationController
   end
 
   def client_file_params
-    params.require(:client_file).permit(:month, :year, :file, :file_cache,
+    params.require(:client_file).permit(:file, :month, :year,
       clients_attributes: [:id, :name, :address, :city, :state, :zip_code, :phone, :cpf]
     )
   end

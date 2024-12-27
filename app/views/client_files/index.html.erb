@@ -49,11 +49,7 @@
               <tr>
                 <td><%= client.year %></td>
                 <td><%= client.month %></td>
-                <td>
-                  <%= link_to client.file.url, class: 'd-inline-block text-truncate', style: "max-width: 300px;" do %>
-                    <%= client.file %>
-                  <% end %>
-                </td>
+                <td><%= client.file.filename.to_s %></td>
                 <td><%= format_datetime(client.created_at) %></td>
                 <td class='text-center'>
                   <%= render 'shared/action_links', object: client %>

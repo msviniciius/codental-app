@@ -55,6 +55,9 @@ end
 group :production do
   gem 'unicorn'
   gem 'rails_12factor'
+  gem 'activestorage', '~> 8.0'
+  gem 'cloudinary', '~> 1.26.0'
+  gem 'activestorage-cloudinary-service', '~> 0.2.0'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

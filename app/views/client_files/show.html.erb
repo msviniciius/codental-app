@@ -15,15 +15,15 @@
           <tbody>
           <tr>
             <td><strong>Ano</strong></td>
-            <td><%= @client_files.year %></td>
+            <td><%= @client_file.year %></td>
           </tr>
           <tr>
             <td><strong>Mes de cadastro</strong></td>
-            <td><%= @client_files.month %></td>
+            <td><%= @client_file.month %></td>
           </tr>
           <tr>
             <td><strong>Arquivo</strong></td>
-            <td><%= @client_files.file %></td>
+            <td><%= @client_file.file.filename.to_s %></td>
           </tr>
           </tbody>
         </table>

@@ -1,13 +1,14 @@
 <div class="card-header with-border">
   <div class="form-group">
     <%= simple_form_for @client_file, multipart: true do |f| %>
-      <div class='row'>
-        <%= f.input :month, as: :select, collection: (2020..Date.today.year).to_a.collect {|d| [d, d]}, placeholder: 'Ano', wrapper_html: {class: "col-sm-2"} %>
-        <%= f.input :year, placeholder: 'Mês', wrapper_html: {class: "col-sm-3"} %>
-        <%= f.input :file_cache, as: :hidden %>
-      </div><p>
-      <div class='col-md-6 mb-3'>
-        <%= f.input :file, as: :file, label: (@client_file.file? ? 'Arquivo já selecionado' : 'Arquivo'), wrapper_html: {class: "col-sm-3"} %>
+      <div class="row">
+        <%= f.input :month, as: :select, collection: (2020..Date.today.year).to_a.collect { |d| [d, d] }, placeholder: 'Ano', wrapper_html: { class: "col-sm-2" } %>
+        <%= f.input :year, placeholder: 'Mês', wrapper_html: { class: "col-sm-3" } %>
+      </div>
+      
+      <div class="col-md-6 mb-3">
+        <%= f.label :file %>
+        <%= f.file_field :file, label: (@client_file.file.attached? ? 'Arquivo já selecionado' : 'Arquivo'), wrapper_html: {class: "col-sm-3"} %>
       </div><p>
 
   <% if @client_file.clients.any? %>

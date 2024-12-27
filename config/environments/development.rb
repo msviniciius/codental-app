@@ -66,4 +66,8 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  config.active_storage.routes_prefix = '/rails/active_storage'
+  config.active_storage.url_options = { host: 'http://localhost:3000' }
+
 end
