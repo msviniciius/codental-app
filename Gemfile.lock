@@ -494,7 +494,8 @@ DEPENDENCIES
   rails_12factor
   railties (~> 8.0)
   ransack
-  redis
+  redis (~> 5.0)
+  redis-client (~> 0.23)
   roo (~> 2.10, >= 2.10.1)
   rspec-rails (~> 7.1)
   sassc-rails

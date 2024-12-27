@@ -27,7 +27,8 @@ gem 'devise'
 gem 'bootsnap', '~> 1.1', '>= 1.1.7'
 gem 'paperclip', '~> 6.1'
 gem 'sidekiq'
-gem 'redis'
+gem 'redis', '~> 5.0'
+gem 'redis-client', '~> 0.23'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
