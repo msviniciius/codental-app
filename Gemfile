@@ -29,6 +29,7 @@ gem 'paperclip', '~> 6.1'
 gem 'sidekiq'
 gem 'redis', '~> 5.0'
 gem 'redis-client', '~> 0.23'
+gem 'bcrypt', '~> 3.1.7'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

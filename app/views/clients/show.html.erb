@@ -47,7 +47,7 @@
             </tr>
             <tr>
               <td><strong>Arquivo Associado:</strong></td>
-              <td><%= @client.client_file.file.filename.to_s %></td>
+              <td><%= @client&.client_file&.file&.filename.to_s %></td>
             </tr>            
           </tbody>
         </table>
