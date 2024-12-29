@@ -122,8 +122,49 @@ $ rails db:create
 $ rails db:migrate
 ```
 
+#### Como acessar o painel (login e senha)
+```
+$ No canto direto a cima na aplicação, temos a opção entrar
+
+$ Em seguida se não tiver um login e senha, selecione a opção Cadastra-se
+
+$ Ensira seu email e senha
+```
+
+#### Sobre
+
+- Ruby on Rails (Backend):
+```
+O Ruby on Rails foi escolhido como framework principal para o backend da aplicação devido à sua convenção sobre configuração, robustez e produtividade.
+```
+- AdminLTE (Interface de Usuário):
+```
+AdminLTE, um template de painel de administração moderno e responsivo. Ele é baseado no Bootstrap 5 e oferece uma interface rica.
+```
+- PostgreSQL (Banco de Dados):
+```
+PostgreSQL como banco de dados relacional devido à sua confiabilidade, desempenho e suporte a transações complexas.
+```
+- Redis e Sidekiq (Cache e Processamento Assíncrono):
+```
+Redis é utilizado para cache e filas de tarefas assíncronas. Sidekiq é responsável pelo processamento de tarefas assíncronas em segundo plano.
+```
+- Cloudinary (Armazenamento de Imagens):
+```
+Cloudinary é utilizado para o armazenamento e manipulação de imagens na nuvem. Ele oferece uma solução escalável para upload, processamento e entrega de imagens otimizadas.
+```
+- Heroku (Implantação):
+```
+Heroku como plataforma de hospedagem devido à sua simplicidade, facilidade de escalabilidade e integração com outras ferramentas.
+```
+- Conclusão:
+```
+Conclusão
+A combinação dessas tecnologias — Ruby on Rails, PostgreSQL, Redis, Sidekiq, Cloudinary e Heroku — fornece uma base sólida e escalável para a nossa aplicação. Essas ferramentas permitem que o sistema seja eficiente, fácil de escalar e capaz de lidar com grandes volumes de dados e tráfego. Além disso, o uso do AdminLTE como template para a interface de usuário proporciona uma experiência agradável e intuitiva para os administradores do sistema.
+```
+
 ### Requisitos
 - Ruby 3.3.6
-- Rails 7.0
+- Rails 8.0
 - Node 17.1.0
 - Yarn 1.22.15..
