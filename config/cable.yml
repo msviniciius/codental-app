@@ -7,6 +7,5 @@ production:
   adapter: redis
   url: <%= ENV["REDIS_URL"] %> 
   channel_prefix: codental_app_production
-  ssl: true
   ssl_params:
     verify_mode: OpenSSL::SSL::VERIFY_NONE
