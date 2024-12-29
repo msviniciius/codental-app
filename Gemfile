@@ -30,6 +30,7 @@ gem 'sidekiq'
 gem 'redis', '~> 5.0'
 gem 'redis-client', '~> 0.23'
 gem 'bcrypt', '~> 3.1.7'
+gem 'dotenv-rails'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
