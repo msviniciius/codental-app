@@ -10,13 +10,16 @@ class ClientStatisticsJob
     clients_by_state = Client.group(:state).count
     clients_by_state = clients_by_state.is_a?(Hash) ? clients_by_state : {}
 
-    sleep(1)
-  
     # Envia os dados para o canal do ActionCable
-    ActionCable.server.broadcast 'clients_statistics_channel', {
-      total_clients: total_clients,
-      duplicate_phones: duplicate_phones,
-      clients_by_state: clients_by_state
-    }
+    begin
+      ActionCable.server.broadcast 'clients_statistics_channel', {
+        total_clients: total_clients,
+        duplicate_phones: duplicate_phones,
+        clients_by_state: clients_by_state
+      }
+    rescue => e
+      Rails.logger.error "Erro ao enviar para ActionCable: #{e.message}"
+      raise e
+    end
   end
 end
