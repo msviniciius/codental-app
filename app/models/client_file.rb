@@ -10,7 +10,6 @@ class ClientFile < ApplicationRecord
     require 'csv'
     
     raise "File not attached" unless file.attached?
-    debugger
     csv_content = file.download
     # Use o conteúdo CSV
     csv = Roo::CSV.new(StringIO.new(csv_content), csv_options: {encoding: Encoding::ISO_8859_1})
