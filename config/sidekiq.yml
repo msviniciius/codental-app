@@ -3,3 +3,5 @@
   - default
   - mailers
   - critical
+:redis:
+  :url: <%= ENV['REDIS_URL'] %>
